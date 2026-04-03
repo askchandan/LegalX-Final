@@ -8,7 +8,6 @@ An enterprise-grade, offline-first conversational AI built to provide highly acc
 
 ## 📸 Interface Preview
 
-*(Insert your animated GIF or PNG screenshot here)*
 ![Project Preview](./assets/image.png)
 
 ## 🌟 Key Features
