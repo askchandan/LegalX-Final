@@ -1,0 +1,11 @@
+langchain
+langchain-community
+langchain-huggingface
+pypdf
+chromadb
+sentence-transformers
+gradio
+duckduckgo-search
+presidio-analyzer
+presidio-anonymizer
+spacy
