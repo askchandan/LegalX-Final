@@ -18,7 +18,11 @@ def get_agent_response(user_query: str, chat_history: list) -> tuple:
     
     if "No strictly relevant" in rag_context:
         web_context = legal_web_search.run(scrubbed_query)
-        context = f"[Live Web Search context fallback]\n{web_context}"
+        if "unavailable" in web_context.lower() or "failed" in web_context.lower():
+            # Programmatic fallback: Instruct the LLM via context to use its own offline weights
+            context = "[Context Override: No database entries found. You are authorized to answer using your internal legal training knowledge.]"
+        else:
+            context = f"[Live Web Search context fallback]\n{web_context}"
     else:
         context = f"[Internal Enterprise DB Results]\n{rag_context}"
     
